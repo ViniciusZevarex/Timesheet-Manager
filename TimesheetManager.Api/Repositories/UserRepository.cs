@@ -70,7 +70,6 @@ namespace TimesheetManager.Api.Repositories
 
 
 
-
         public async Task Update(int id, User user)
         {
             bool hasAny = await _database_context.Users.AnyAsync(x => x.Id == id);
@@ -88,6 +87,17 @@ namespace TimesheetManager.Api.Repositories
                 throw new DbConcurrencyException(e.Message);
             }
         }
+
+
+
+
+
+        public async Task<User> Login(string email, string password)
+        {
+            User user = await _database_context.Users.FirstOrDefaultAsync(x => x.Email == email && x.Password == password);
+            return user;
+        }
+
 
     }
 }

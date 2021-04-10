@@ -8,6 +8,7 @@ using System.Text;
 using System.Security.Claims;
 using System;
 using Microsoft.Extensions.Options;
+using TimesheetManager.Api.Repositories;
 
 namespace TimesheetManager.Api.Controllers
 {
@@ -16,13 +17,20 @@ namespace TimesheetManager.Api.Controllers
     {
 
         private readonly JWTSettings _jwtsettings;
+        private readonly UserRepository _userRepository;
 
 
 
-        public AuthController(IOptions<JWTSettings> jwtsettings)
+        public AuthController(IOptions<JWTSettings> jwtsettings, UserRepository userRepository)
         {
             this._jwtsettings = jwtsettings.Value;
+            this._userRepository = userRepository;
         }
+
+
+
+
+
 
 
 
@@ -32,16 +40,10 @@ namespace TimesheetManager.Api.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<UserToken>> Authenticate([FromBody] User model)
         {
-            var user = new User{
-                Id = 1,
-                Name = "Vinicius.Zevarex",
-                Email = "vinicius.zevarex2002@gmail.com",
-                Avatar = "/images/avatars/avatar_1.jpeg"
-            };
+            var user = await _userRepository.Login(model.Email, model.Password);
 
             if(user == null)
                 return NotFound(new { message = "Email ou senha inválidos"});
-
 
             var token = GenerateAccessToken(user);
 
@@ -51,6 +53,9 @@ namespace TimesheetManager.Api.Controllers
             };
             
         }
+
+
+
 
 
 

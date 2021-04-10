@@ -18,25 +18,8 @@ namespace TimesheetManager.Api.Database
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){}
         public DbSet<User> Users {get;set;}
-
-
-
-
-
-        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        // {
-        //     optionsBuilder.UseSqlServer(_connectionString);
-        // }
-
-
-        // public IConfigurationRoot GetConfiguration()
-        // {
-        //     var builder = new ConfigurationBuilder()
-        //     .SetBasePath(Directory.GetCurrentDirectory())
-        //     .AddJsonFile("appsettings.json", optional:true,reloadOnChange:true);
-
-        //     return builder.Build();
-        // }
-
+        public DbSet<Customer> Customers {get;set;}
+        public DbSet<Project> Projects {get;set;}
+        
     }
 }
