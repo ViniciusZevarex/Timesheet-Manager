@@ -19,7 +19,6 @@ namespace TimesheetManager.Api.Controllers
 
 
 
-
         public AuthController(IOptions<JWTSettings> jwtsettings)
         {
             this._jwtsettings = jwtsettings.Value;
