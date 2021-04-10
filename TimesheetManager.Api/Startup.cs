@@ -46,6 +46,7 @@ namespace TimesheetManager.Api
             );
 
             services.AddScoped<UserRepository>();
+            services.AddScoped<CustomerRepository>();
 
 
             var jwtSection = Configuration.GetSection("JWTSettings");
