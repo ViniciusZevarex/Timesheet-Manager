@@ -43,10 +43,12 @@ namespace TimesheetManager.Api.Repositories
 
 
 
-        public async Task Insert(Customer customer)
+        public async Task<int> Insert(Customer customer)
         {
             _database_context.Add(customer);
             await _database_context.SaveChangesAsync();
+
+            return customer.Id;
         }
 
 

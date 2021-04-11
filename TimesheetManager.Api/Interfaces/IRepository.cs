@@ -9,7 +9,7 @@ namespace TimesheetManager.Api.Interfaces
     {
         Task<List<T>> List();
         Task<T> GetById(int id);
-        Task Insert(T entidade);
+        Task<int> Insert(T entidade);
         Task Delete(int id);
         Task Update(int id, T entidade);
     }
