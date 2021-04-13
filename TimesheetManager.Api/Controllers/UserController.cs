@@ -30,7 +30,6 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpGet]
         [Route("index")]
-        [AllowAnonymous]
         public async Task<ActionResult<Response>> Index()
         {
             var list = await _userRepository.List();

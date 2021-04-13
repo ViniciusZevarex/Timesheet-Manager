@@ -15,11 +15,12 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 
 
+
 using TimesheetManager.Api.Models;
 using System.Text;
 using TimesheetManager.Api.Repositories;
 using TimesheetManager.Api.Database;
-
+using Microsoft.IdentityModel.Logging;
 
 namespace TimesheetManager.Api
 {
@@ -47,6 +48,12 @@ namespace TimesheetManager.Api
 
             services.AddScoped<UserRepository>();
             services.AddScoped<CustomerRepository>();
+            services.AddScoped<ProjectRepository>();
+
+
+
+            // Configuração do JWT token authentication
+            IdentityModelEventSource.ShowPII = true;
 
 
             var jwtSection = Configuration.GetSection("JWTSettings");
@@ -69,6 +76,10 @@ namespace TimesheetManager.Api
                     ValidateAudience = false
                 };
             });
+
+
+
+
 
         }
 
