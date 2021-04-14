@@ -29,10 +29,14 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpGet]
         [Route("index")]
-        public async Task<ActionResult<List<Customer>>> Index()
+        public async Task<ActionResult<Response>> Index()
         {
             var customers = await _customerRepository.List();
-            return  Ok(customers);
+            return Ok(new Response{
+                Status = 200,
+                Message = "",
+                Data = customers
+            });
         }
 
 

@@ -49,6 +49,8 @@ namespace TimesheetManager.Api
             services.AddScoped<UserRepository>();
             services.AddScoped<CustomerRepository>();
             services.AddScoped<ProjectRepository>();
+            services.AddScoped<StageRepository>();
+            services.AddScoped<IssueRepository>();
 
 
 

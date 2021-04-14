@@ -17,9 +17,13 @@ namespace TimesheetManager.Api.Database
     //     private readonly string _connectionString;
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){}
+        
         public DbSet<User> Users {get;set;}
         public DbSet<Customer> Customers {get;set;}
         public DbSet<Project> Projects {get;set;}
+
+        public DbSet<Stage> Stages {get;set;}
+        public DbSet<Issue> Issues {get;set;}
         
     }
 }

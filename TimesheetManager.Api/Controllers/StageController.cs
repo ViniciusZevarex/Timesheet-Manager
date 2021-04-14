@@ -1,27 +1,23 @@
+using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.Extensions.Options;
 
 using TimesheetManager.Api.Models;
 using TimesheetManager.Api.Repositories;
-using System;
 using TimesheetManager.Api.Exceptions;
+
 namespace TimesheetManager.Api.Controllers
 {
-
-    [Route("v1/project")]
-    public class ProjectController : Controller
+    public class StageController : Controller
     {
-
-        private readonly ProjectRepository _projectRepository;
-
         
-        public ProjectController(ProjectRepository projectRepository)
+        private readonly StageRepository _stageRepository;
+
+
+        public StageController(StageRepository stageRepository)
         {
-            _projectRepository = projectRepository;
+            _stageRepository = stageRepository;
         }
 
 
@@ -29,7 +25,7 @@ namespace TimesheetManager.Api.Controllers
         [Route("index")]
         public async Task<ActionResult<Response>> Index()
         {
-            var list = await _projectRepository.List();
+            var list = await _stageRepository.List();
 
             return Ok(new Response{
                 Status = 200,
@@ -47,12 +43,12 @@ namespace TimesheetManager.Api.Controllers
         public async Task<ActionResult<Response>> Details(int id)
         {
 
-            var project = await _projectRepository.GetById(id);
+            var stage = await _stageRepository.GetById(id);
 
-            if(project == null)
+            if(stage == null)
                 return NotFound(new Response {
                     Status = 404,
-                    Message = "Projeto não encontrado",
+                    Message = "Etapa não encontrado",
                     Data = null
                 });
 
@@ -60,7 +56,7 @@ namespace TimesheetManager.Api.Controllers
             return Ok(new Response{
                 Status = 200,
                 Message = "",
-                Data = project
+                Data = stage
             });
 
         }
@@ -75,16 +71,16 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpPost]
         [Route("create")]
-        public async Task<ActionResult<Response>> Create([FromBody] Project model)
+        public async Task<ActionResult<Response>> Create([FromBody] Stage model)
         {
-            int id = await _projectRepository.Insert(project: model);
+            int id = await _stageRepository.Insert(stage: model);
 
-            Project project = await _projectRepository.GetById(model.Id);
+            Stage stage = await _stageRepository.GetById(model.Id);
 
             return Ok(new Response{ 
                 Status = 200,
-                Message = "Projeto cadastrado com sucesso.",
-                Data = project
+                Message = "Etapa cadastrada com sucesso.",
+                Data = stage
             });
         }
 
@@ -96,7 +92,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpPut]
         [Route("update")]
-        public async Task<ActionResult<Response>> Update([FromBody] Project model, [FromHeader] int id)
+        public async Task<ActionResult<Response>> Update([FromBody] Stage model, [FromHeader] int id)
         {
             if(model.Id != id)
                 return BadRequest(new Response{
@@ -112,12 +108,12 @@ namespace TimesheetManager.Api.Controllers
             
             try
             {
-                await _projectRepository.Update(id, model);
+                await _stageRepository.Update(id, model);
 
 
                 return Ok(new Response{
                     Status = 200,
-                    Message = "Dados do projeto alterados com sucesso.",
+                    Message = "Dados da etapa alterados com sucesso.",
                     Data = model
                 });
 
@@ -126,14 +122,12 @@ namespace TimesheetManager.Api.Controllers
             {
                 return NotFound(new Response{
                     Status = 404,
-                    Message = "Projeto não encontrado",
+                    Message = "Etapa não encontrada",
                     Data = null
                 });
             }
 
 
         }
-        
-
     }
 }
