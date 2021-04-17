@@ -28,8 +28,8 @@ namespace TimesheetManager.Api.Repositories
 
 
 
-        public async Task<List<Issue>> List(){
-
+        public async Task<List<Issue>> List()
+        {
             return await _database_context.Issues.OrderBy(x => x.Id).ToListAsync();
         }
 
