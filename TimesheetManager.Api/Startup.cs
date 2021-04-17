@@ -21,6 +21,7 @@ using System.Text;
 using TimesheetManager.Api.Repositories;
 using TimesheetManager.Api.Database;
 using Microsoft.IdentityModel.Logging;
+using Microsoft.OpenApi.Models;
 
 namespace TimesheetManager.Api
 {
@@ -79,9 +80,10 @@ namespace TimesheetManager.Api
                 };
             });
 
-
-
-
+            // services.AddSwaggerGen(c =>
+            // {
+            //     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Timesheet Manager", Version = "v1" });
+            // });
 
         }
 
@@ -110,6 +112,14 @@ namespace TimesheetManager.Api
             {
                 endpoints.MapControllers();
             });
+
+
+            // app.UseSwagger();
+            // app.UseSwaggerUI(c => {
+            //     c.SwaggerEndpoint("/swagger/v1/swagger.json","v1");
+            //     c.RoutePrefix = "";
+            // }
+            // );
         }
     }
 }

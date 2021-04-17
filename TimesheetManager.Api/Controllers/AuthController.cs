@@ -59,7 +59,6 @@ namespace TimesheetManager.Api.Controllers
 
 
 
-
         private string GenerateAccessToken(User user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();

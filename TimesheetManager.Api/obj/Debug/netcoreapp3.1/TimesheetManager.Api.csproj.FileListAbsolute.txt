@@ -62,3 +62,8 @@ D:\Projetos\TimesheetManager\TimesheetManager.Api\bin\Debug\netcoreapp3.1\runtim
 D:\Projetos\TimesheetManager\TimesheetManager.Api\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\Projetos\TimesheetManager\TimesheetManager.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\Projetos\TimesheetManager\TimesheetManager.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Projetos\TimesheetManager\TimesheetManager.Api\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\Projetos\TimesheetManager\TimesheetManager.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\Projetos\TimesheetManager\TimesheetManager.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Projetos\TimesheetManager\TimesheetManager.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Projetos\TimesheetManager\TimesheetManager.Api\obj\Debug\netcoreapp3.1\TimesheetManager.Api.MvcApplicationPartsAssemblyInfo.cs
