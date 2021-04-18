@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using TimesheetManager.Api.Models;
 using TimesheetManager.Api.Repositories;
 using TimesheetManager.Api.Exceptions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TimesheetManager.Api.Controllers
 {
@@ -23,6 +24,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpGet]
         [Route("index")]
+        [Authorize]
         public async Task<ActionResult<Response>> Index()
         {
             var list = await _stageRepository.List();
@@ -40,6 +42,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpGet]
         [Route("details")]
+        [Authorize]
         public async Task<ActionResult<Response>> Details(int id)
         {
 
@@ -71,6 +74,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpPost]
         [Route("create")]
+        [Authorize]
         public async Task<ActionResult<Response>> Create([FromBody] Stage model)
         {
             int id = await _stageRepository.Insert(stage: model);
@@ -92,6 +96,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpPut]
         [Route("update")]
+        [Authorize]
         public async Task<ActionResult<Response>> Update([FromBody] Stage model, [FromHeader] int id)
         {
             if(model.Id != id)

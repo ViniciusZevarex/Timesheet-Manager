@@ -27,6 +27,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpGet]
         [Route("index")]
+        [Authorize]
         public async Task<ActionResult<Response>> Index()
         {
             var list = await _projectRepository.List();
@@ -44,6 +45,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpGet]
         [Route("details")]
+        [Authorize]
         public async Task<ActionResult<Response>> Details(int id)
         {
 
@@ -75,6 +77,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpPost]
         [Route("create")]
+        [Authorize]
         public async Task<ActionResult<Response>> Create([FromBody] Project model)
         {
             int id = await _projectRepository.Insert(project: model);
@@ -96,6 +99,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpPut]
         [Route("update")]
+        [Authorize]
         public async Task<ActionResult<Response>> Update([FromBody] Project model, [FromHeader] int id)
         {
             if(model.Id != id)

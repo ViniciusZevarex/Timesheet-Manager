@@ -30,6 +30,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpGet]
         [Route("index")]
+        [Authorize]
         public async Task<ActionResult<Response>> Index()
         {
             var list = await _userRepository.List();
@@ -47,6 +48,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpGet]
         [Route("details")]
+        [Authorize]
         public async Task<ActionResult<Response>> Details(int id)
         {
 
@@ -100,6 +102,7 @@ namespace TimesheetManager.Api.Controllers
 
         [HttpPut]
         [Route("update")]
+        [Authorize]
         public async Task<ActionResult<Response>> Update([FromBody] User model, [FromHeader] int id)
         {
             if(model.Id != id)
