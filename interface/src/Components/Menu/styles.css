@@ -1,0 +1,54 @@
+.menu-container {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background: #0b5351;
+  transition: all .5s ease;
+}
+
+.menu-container header {
+  font-size: 25px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  user-select: none;
+}
+
+.menu-container footer {
+  position: absolute;
+  color: white;
+  padding: 12px;
+  bottom: 10px;
+}
+
+.menu-container ul a{
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #333333;
+  transition: .4s;
+}
+
+.menu-container ul li:hover a{
+  padding-left: 50px;
+}
+
+.menu-container ul a .menu-user{  
+  padding: 12px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* align-self: center; */
+}
+
+.menu-container ul a .menu-icons{
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}

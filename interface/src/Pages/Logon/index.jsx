@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './index.css';
 
@@ -12,7 +12,7 @@ export default function Logon()
             <form className="login-form">
                 <h1 className="text-center">Entrar</h1>
                 
-                <img src={LoginImage} className="logoForm" />
+                <img src={LoginImage} alt="login image" className="logoForm" />
                 
                 <div className="input-group">
                     <label for="user">Usuário:</label>
@@ -27,9 +27,11 @@ export default function Logon()
                 <button className="btn-primary">
                     Entrar
                 </button>
+
+                <Link to="/home" className="btn-primary">
+                    Link to Home, only for dev!
+                </Link>
             </form>
         </div>
-    )
-
-        
+    )        
 }
