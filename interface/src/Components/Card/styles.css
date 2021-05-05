@@ -1,0 +1,15 @@
+.card-container {
+    background: #F7F9F9;
+    margin: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 10px solid #00A676;
+}
+
+.card-container header {
+    margin-bottom: 10px;
+}
+
+.card-container footer {
+    margin-top: 10px;
+}

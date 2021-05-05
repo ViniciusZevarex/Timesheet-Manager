@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projetos\\TimesheetManager\\TimesheetManager.Api\\TimesheetManager.Api.csproj": {}
+    "C:\\Users\\gabri\\OneDrive\\Documentos\\MyDocs\\Estudos\\Timesheet-Manager\\TimesheetManager.Api\\TimesheetManager.Api.csproj": {}
   },
   "projects": {
-    "D:\\Projetos\\TimesheetManager\\TimesheetManager.Api\\TimesheetManager.Api.csproj": {
+    "C:\\Users\\gabri\\OneDrive\\Documentos\\MyDocs\\Estudos\\Timesheet-Manager\\TimesheetManager.Api\\TimesheetManager.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projetos\\TimesheetManager\\TimesheetManager.Api\\TimesheetManager.Api.csproj",
+        "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Documentos\\MyDocs\\Estudos\\Timesheet-Manager\\TimesheetManager.Api\\TimesheetManager.Api.csproj",
         "projectName": "TimesheetManager.Api",
-        "projectPath": "D:\\Projetos\\TimesheetManager\\TimesheetManager.Api\\TimesheetManager.Api.csproj",
-        "packagesPath": "C:\\Users\\Vinicius Zevarex\\.nuget\\packages\\",
-        "outputPath": "D:\\Projetos\\TimesheetManager\\TimesheetManager.Api\\obj\\",
+        "projectPath": "C:\\Users\\gabri\\OneDrive\\Documentos\\MyDocs\\Estudos\\Timesheet-Manager\\TimesheetManager.Api\\TimesheetManager.Api.csproj",
+        "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gabri\\OneDrive\\Documentos\\MyDocs\\Estudos\\Timesheet-Manager\\TimesheetManager.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Vinicius Zevarex\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -85,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

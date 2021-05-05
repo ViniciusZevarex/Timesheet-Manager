@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { AiOutlineAppstore, AiOutlineHistory, AiFillFunnelPlot } from "react-icons/ai";
 
@@ -18,7 +19,7 @@ function Menu() {
                         />
                     </a>
                 </li>
-                <li><a href="#"><AiOutlineAppstore className="menu-icons" />Projects</a></li>
+                <li><Link to="/home"><AiOutlineAppstore className="menu-icons" />Projects</Link></li>
                 <li><a href="#"><AiOutlineHistory className="menu-icons" />Time</a></li>
                 <li><a href="#"><AiFillFunnelPlot className="menu-icons" />Search</a></li>
             </ul>
